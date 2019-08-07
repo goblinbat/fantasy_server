@@ -4,7 +4,7 @@ const Posst = sequelize.import('../models/Post'); // spelling it "Posst" to avoi
 
 // get all posts (regardless of user)
 router.get('/all', (req, res) => {
-    Posst.findAll()     // i think this should work, but not 100% sure
+    Posst.findAll() 
     .then(pst => res.status(200).json(pst))
     .catch(err => res.status(500).json({error: err}))
 });
