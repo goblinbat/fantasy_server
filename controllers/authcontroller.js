@@ -50,4 +50,11 @@ router.post('/login', (req, res) => {
     });
 });
 
+// get all posts (so that non-logged-in users can actually use the explore page)
+router.get('/allPosts', (req, res) => {
+    Posst.findAll() 
+    .then(pst => res.status(200).json(pst))
+    .catch(err => res.status(500).json({error: err}))
+});
+
 module.exports = router
