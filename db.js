@@ -18,3 +18,4 @@ Comment.belongsTo(Post);
 Comment.belongsTo(User);
 
 module.exports = sequelize;
+    

@@ -48,7 +48,7 @@ router.put('/:id', (req, res) => {
     .catch(err => res.status(500).json({error: err}))
 });
 
-// delete madlib
+// delete post
 router.delete('/:id', (req, res) => {
     Posst.destroy({where: {id: req.params.id}})
     .then(pst => res.status(200).json(pst))

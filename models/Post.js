@@ -65,7 +65,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true
         },
         iVuln: {                   // monster damage vulnerabilities
-            type: DataTyoes.ARRAY(DataTypes.STRING), 
+            type: DataTypes.ARRAY(DataTypes.STRING), 
             allowNull: true
         },
         iResist: {                   // monster damage resistances
@@ -85,7 +85,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true
         },
         iCR: {                   // monster combat rating (CR)
-            type: DataTypes.NUMBER, 
+            type: DataTypes.INTEGER, 
             allowNull: true
         }
     })
