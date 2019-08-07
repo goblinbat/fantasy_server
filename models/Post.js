@@ -4,10 +4,6 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        summary: {                      //when mapped over on frontend shows this small summary of what the post is about
-            type: DataTypes.STRING,
-            allowNull: false
-        },
         type: {                         // text, creature, item, class, or race (allows for searching, filtering, pulling up correct forms, etc)
             type: DataTypes.STRING,
             allowNull: false
@@ -69,7 +65,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true
         },
         iVuln: {                   // monster damage vulnerabilities
-            type: DataTyoes.ARRAY(DataTypes.STRING), 
+            type: DataTypes.ARRAY(DataTypes.STRING), 
             allowNull: true
         },
         iResist: {                   // monster damage resistances
@@ -89,7 +85,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true
         },
         iCR: {                   // monster combat rating (CR)
-            type: DataTypes.NUMBER, 
+            type: DataTypes.INTEGER, 
             allowNull: true
         }
     })
