@@ -57,4 +57,18 @@ router.get('/allPosts', (req, res) => {
     .catch(err => res.status(500).json({error: err}))
 });
 
+// get all comments on post
+router.get('/post/:postId', (req, res) => {    // :id NEEDS to be the id of the POST, NOT a comment
+    Comment.findAll({where: {postId: req.params.id}})
+    .then(com => res.status(200).json(com))
+    .catch(err => res.status(500).json({error: err}))
+});
+
+// get comment by id
+router.get('/:id', (req, res) => {
+    Comment.findOne({where: {id: req.params.id}})
+    .then(com => res.status(200).json(com))
+    .catch(err => res.status(500).json({error: err}))
+});
+
 module.exports = router

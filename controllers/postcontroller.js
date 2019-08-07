@@ -2,12 +2,12 @@ const router = require('express').Router();
 const sequelize = require('../db');
 const Posst = sequelize.import('../models/Post'); // spelling it "Posst" to avoid confusion with .post
 
-// get all posts (regardless of user)
-router.get('/all', (req, res) => {
-    Posst.findAll() 
-    .then(pst => res.status(200).json(pst))
-    .catch(err => res.status(500).json({error: err}))
-});
+// // get all posts (regardless of user)
+// router.get('/all', (req, res) => {
+//     Posst.findAll() 
+//     .then(pst => res.status(200).json(pst))
+//     .catch(err => res.status(500).json({error: err}))
+// });
 
 // get all of a user's posts
 router.get('/', (req, res) => {
@@ -29,7 +29,9 @@ router.post('/', (req, res) => {
         userId: req.user.id,
         title: req.body.title,
         text: req.body.text,
-        tags: req.body.tags
+        tags: req.body.tags,
+        summary: req.body.summary,
+        type: req.body.type
     }
     Posst.create(newPost)
     .then(pst => res.status(200).json(pst))
