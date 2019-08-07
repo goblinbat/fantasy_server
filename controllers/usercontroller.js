@@ -11,6 +11,13 @@ router.get('/:username', (req, res) => {
     .catch(err => res.status(500).json({error:err}))
 })
 
+// get all users
+router.get('/get/all', (req, res) => {
+    User.findAll()
+    .then(users => res.status(200).json(users))
+    .catch(err => res.status(500).json({error: err}))
+})
+
 // update 
 router.put('/:id', (req, res) => {
     const username = req.body.user.username;
