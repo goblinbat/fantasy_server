@@ -27,10 +27,25 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     const newPost = {
         userId: req.user.id,
+        type: req.body.type, 
         title: req.body.title,
         text: req.body.text,
         tags: req.body.tags,
-        type: req.body.type
+        image: req.body.image,
+        iName: req.body.iName,
+        iCat: req.body.iCat,
+        iRange: req.body.iRange,
+        iDamage: req.body.iDamage,
+        iThrow: req.body.iThrow,
+        iProperties: req.body.iProperties,
+        iAlign: req.body.iAlign,
+        iScores: req.body.iScores,
+        iVuln: req.body.iVuln,
+        iResist: req.body.iResist,
+        iImmune: req.body.iImmune,
+        iLang: req.body.iLang,
+        iAction: req.body.iAction,
+        iCR: req.body.iCR
     }
     Posst.create(newPost)
     .then(pst => res.status(200).json(pst))
@@ -40,9 +55,24 @@ router.post('/', (req, res) => {
 // update post
 router.put('/:id', (req, res) => {
     const upPost = {
-        title : req.body.title,
-        text : req.body.text,
-        tags : req.body.tags
+        title: req.body.title,
+        text: req.body.text,
+        tags: req.body.tags,
+        image: req.body.image,
+        iName: req.body.iName,
+        iCat: req.body.iCat,
+        iRange: req.body.iRange,
+        iDamage: req.body.iDamage,
+        iThrow: req.body.iThrow,
+        iProperties: req.body.iProperties,
+        iAlign: req.body.iAlign,
+        iScores: req.body.iScores,
+        iVuln: req.body.iVuln,
+        iResist: req.body.iResist,
+        iImmune: req.body.iImmune,
+        iLang: req.body.iLang,
+        iAction: req.body.iAction,
+        iCR: req.body.iCR
     } 
     Posst.update(upPost, {where: {id: req.params.id}})
     .then(pst => res.status(200).json(pst))
