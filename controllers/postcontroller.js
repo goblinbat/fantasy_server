@@ -30,7 +30,6 @@ router.post('/', (req, res) => {
         title: req.body.title,
         text: req.body.text,
         tags: req.body.tags,
-        summary: req.body.summary,
         type: req.body.type
     }
     Posst.create(newPost)
