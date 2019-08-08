@@ -5,6 +5,8 @@ const sequelize = require('../db');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = sequelize.import('../models/User');
+const Posst = sequelize.import('../models/Post');
+const Comment = sequelize.import('../models/Comment');
 
 router.post('/signup', (req, res) => {
     const username = req.body.user.username;
