@@ -4,7 +4,11 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        type: {                         // text, creature, item, class, or race (allows for searching, filtering, pulling up correct forms, etc)
+        userName: {
+            type:DataTypes.STRING,
+            allowNull:false
+        },
+        type: {                         //campaign, story, or creature, item, class, or race (allows for searching, filtering, pulling up correct forms, etc)
             type: DataTypes.STRING,
             allowNull: false
         },

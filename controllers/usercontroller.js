@@ -11,6 +11,12 @@ router.get('/:username', (req, res) => {
     .catch(err => res.status(500).json({error:err}))
 })
 
+router.get('/get/:id', (req, res) => {
+    User.findOne({where: {id: req.params.id}})
+    .then(user => res.status(200).json(user))
+    .catch(err => res.status(500).json({error: err}))
+})
+
 // get all users
 router.get('/get/all', (req, res) => {
     User.findAll()
