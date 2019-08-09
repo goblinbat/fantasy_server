@@ -27,6 +27,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     const newPost = {
         userId: req.user.id,
+        userName: req.user.username,
         type: req.body.type, 
         title: req.body.title,
         text: req.body.text,
@@ -57,6 +58,7 @@ router.put('/:id', (req, res) => {
     const upPost = {
         title: req.body.title,
         text: req.body.text,
+        type: req.body.type,
         tags: req.body.tags,
         image: req.body.image,
         iName: req.body.iName,
