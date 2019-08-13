@@ -16,12 +16,12 @@ router.get('/', (req, res) => {
     .catch(err => res.status(500).json({error: err}))
 });
 
-// get single post
-router.get('/:id', (req, res) => {
-    Posst.findOne({where: {id: req.params.id}})
-    .then(pst => res.status(200).json(pst))
-    .catch(err => res.status(500).json({error: err}))
-})
+// get single post      [Use the one in authcontroller]
+// router.get('/:id', (req, res) => {  
+//     Posst.findOne({where: {id: req.params.id}})
+//     .then(pst => res.status(200).json(pst))
+//     .catch(err => res.status(500).json({error: err}))
+// })
 
 // create post
 router.post('/', (req, res) => {
