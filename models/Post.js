@@ -17,7 +17,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
         text: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: true
         },
         tags: {
@@ -57,7 +57,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true
         },
         iProperties: {              // lists of weapon properties, monster abilities, class proficiencies, race proficiencies
-            type: DataTypes.ARRAY(DataTypes.STRING), 
+            type: DataTypes.TEXT, 
             allowNull: true
         },
         iAlign: {                   // monster alignment, race alignment
@@ -65,27 +65,27 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true
         },
         iScores: {                   // lists of monster scores (order of: str, dex, con, int, wis, cha (use indexes to access specifics)), class proficiency choices and how many to choose, race bonuses (Same order as monsters)
-            type: DataTypes.ARRAY(DataTypes.STRING), 
+            type: DataTypes.TEXT, 
             allowNull: true
         },
         iVuln: {                   // monster damage vulnerabilities
-            type: DataTypes.ARRAY(DataTypes.STRING), 
+            type: DataTypes.TEXT, 
             allowNull: true
         },
         iResist: {                   // monster damage resistances
-            type: DataTypes.ARRAY(DataTypes.STRING), 
+            type: DataTypes.STRING, 
             allowNull: true
         },
         iImmune: {                   // monster immunities, race subraces
-            type: DataTypes.ARRAY(DataTypes.STRING), 
+            type: DataTypes.STRING, 
             allowNull: true
         },
         iLang: {                   // monster languages, race languages
-            type: DataTypes.ARRAY(DataTypes.STRING),
+            type: DataTypes.STRING,
             allowNull: true
         },
         iAction: {                   // monster actions, race traits
-            type: DataTypes.ARRAY(DataTypes.STRING),
+            type: DataTypes.TEXT,
             allowNull: true
         },
         iCR: {                   // monster combat rating (CR)
