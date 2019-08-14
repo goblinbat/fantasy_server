@@ -10,7 +10,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
         profile: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: true
         },
         profilePic: {
