@@ -20,6 +20,7 @@ const Comment = sequelize.import('../models/Comment');
 router.post('/:postId', (req, res) => {
     const newCom = {
         userId : req.user.id,
+        userName: req.user.username,
         postId : req.params.postId,
         text : req.body.text
     }
