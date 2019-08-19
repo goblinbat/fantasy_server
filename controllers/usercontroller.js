@@ -29,13 +29,13 @@ router.put('/:id', (req, res) => {
     const username = req.body.user.username;
     // const password = req.body.user.password;
     const profile = req.body.user.profile;
-    // const profilePic = req.body.user.pic
+    const profilePic = req.body.user.pic
 
     User.update({
         username: username,
         // password: bcrypt.hashSync(password, 10),
         profile: profile,
-        // profilePic: profilePic
+        profilePic: profilePic
     }, {where: {id: req.params.id}})
     .then(user => res.status(200).json(user))
     .catch(err => res.json({error: err}))
