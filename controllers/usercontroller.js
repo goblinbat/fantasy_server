@@ -18,7 +18,7 @@ router.get('/get/:id', (req, res) => {
 })
 
 // get all users
-router.get('/get/all', (req, res) => {
+router.get('/find/all', (req, res) => {
     User.findAll()
     .then(users => res.status(200).json(users))
     .catch(err => res.status(500).json({error: err}))
