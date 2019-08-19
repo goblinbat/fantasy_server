@@ -10,11 +10,11 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
         profile: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: true
         },
         profilePic: {
-            type: DataTypes.STRING,
+            type: DataTypes.ARRAY(DataTypes.STRING),
             allowNull: true
         },
         friends: {
