@@ -29,7 +29,7 @@ router.put('/:id', (req, res) => {
     const username = req.body.user.username;
     // const password = req.body.user.password;
     const profile = req.body.user.profile;
-    const profilePic = req.body.user.pic
+    const profilePic = req.body.user.profilePic
 
     User.update({
         username: username,
