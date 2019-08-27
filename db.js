@@ -13,8 +13,8 @@ sequelize.authenticate()
 .then(() => console.log('postgres is connected'))
 .catch(err => console.log(err))
 
-Post.belongsTo(User);
-Comment.belongsTo(Post);
-Comment.belongsTo(User);
+Post.belongsTo(User, {onDelete: 'CASCADE'});
+Comment.belongsTo(Post, {onDelete: 'CASCADE'});
+Comment.belongsTo(User, {onDelete: 'CASCADE'});
 
 module.exports = sequelize;
